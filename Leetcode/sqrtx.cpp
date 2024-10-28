@@ -10,6 +10,14 @@ public:
 
         long long int ans = -1;
 
+        if(n == 0) {
+            return 0;
+        }
+
+        if(n == 1) {
+            return 1;
+        }
+
         while(start <= end) {
             long long int square = mid * mid;
             if(square == n) {
