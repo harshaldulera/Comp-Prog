@@ -2,24 +2,17 @@
 using namespace std;
 
 int solve(vector<int>& price, int n) {
-    if(n == 0) {
-        return 0;
-    }
-    int maxi = price[0];
-    int mini = INT_MAX;
-    int index = 0;
+    int loss = 0;
+    int maxPrice = price[0];
 
     for(int i = 1; i < n; i++) {
-        maxi = max(maxi, price[i]);
-        index = i;
-    }
+        maxPrice = max(maxPrice, price[i]);
 
-    for(int i = index; i < n; i++) {
-        mini = min(mini, price[i]);
-    }
+        int floss = maxPrice - price[i];
 
-    return maxi - mini;
-
+        loss = max(loss, floss);
+    } 
+    return loss;
 }
 
 int main () {
