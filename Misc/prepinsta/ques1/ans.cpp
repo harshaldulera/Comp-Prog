@@ -7,9 +7,7 @@ int solve(vector<int>& price, int n) {
 
     for(int i = 1; i < n; i++) {
         maxPrice = max(maxPrice, price[i]);
-
         int floss = maxPrice - price[i];
-
         loss = max(loss, floss);
     } 
     return loss;
