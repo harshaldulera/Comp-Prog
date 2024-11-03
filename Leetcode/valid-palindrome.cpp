@@ -50,3 +50,36 @@ public:
         return true;
     }
 };
+
+
+// Another Solution
+
+class Solution {
+public:
+    bool valid(char ch) {
+        if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9')){
+            return 1;
+        }
+        return 0;
+    }
+
+    bool isPalindrome(string s) {
+        // int i = 0;
+        string temp = "";
+
+        for(int j = 0; j < s.size(); j++){
+            if (valid(s[j])) {
+                temp.push_back(tolower(s[j]));
+            }
+        }
+        int i = 0, j = temp.length() - 1;
+        while(i < j) {
+            if(temp[i] != temp[j]){
+                return false;
+            }
+
+            i++; j--;
+        }
+        return true;
+    }
+};
