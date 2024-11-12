@@ -5,7 +5,7 @@ public:
         sort(t.begin(), t.end());
 
         if(s == t) {
-            return true;
+            return true;    
         }
 
         return false;
